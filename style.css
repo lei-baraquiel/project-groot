@@ -1,0 +1,51 @@
+/* 
+  Custom Animations 
+*/
+
+/* Pulse animation for the main button */
+.pulse-ring {
+  box-shadow: 0 0 0 0 rgba(134, 189, 71, 0.7);
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(134, 189, 71, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(134, 189, 71, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(134, 189, 71, 0);
+  }
+}
+
+/* Bounce animation for the main button */
+.bounce:hover {
+  animation: bounce-animation 0.5s;
+}
+
+@keyframes bounce-animation {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* 
+  Map Placeholder 
+*/
+.map-placeholder {
+  background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* 
+  Tab Transitions 
+*/
+.tab-content {
+  transition: all 0.3s ease;
+}

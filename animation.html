@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Animations</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .btn {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .pulse:hover {
+            animation: pulse-animation 1s infinite;
+        }
+
+        @keyframes pulse-animation {
+            0% {
+                box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+            }
+            100% {
+                box-shadow: 0 0 0 20px rgba(76, 175, 80, 0);
+            }
+        }
+
+        .shake:hover {
+            animation: shake-animation 0.5s infinite;
+        }
+
+        @keyframes shake-animation {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+
+        .bounce:hover {
+            animation: bounce-animation 0.5s;
+        }
+
+        @keyframes bounce-animation {
+            0%   { transform: translateY(0); }
+            50%  { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        .slider-container {
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .custom-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 15px;
+            border-radius: 5px;  
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .custom-slider:hover {
+            opacity: 1;
+        }
+
+        .custom-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%; 
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        .custom-slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Button Animations</h1>
+    <button class="btn pulse">Pulse</button>
+    <button class="btn shake">Shake</button>
+    <button class="btn bounce">Bounce</button>
+
+    <h1 style="margin-top: 50px;">Slider Animations</h1>
+    <div class="slider-container">
+        <h2>Default Slider</h2>
+        <input type="range" min="1" max="100" value="50">
+    </div>
+    <div class="slider-container">
+        <h2>Custom Styled Slider</h2>
+        <input type="range" min="1" max="100" value="50" class="custom-slider">
+    </div>
+
+</body>
+</html>
